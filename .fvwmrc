@@ -1,0 +1,46 @@
+# 2018-08-31 05:54
+# 2019-02-08 17:18
+#
+
+# General settings
+DeskTopSize 1x1
+
+# Keyboard and Mouse bindings
+Mouse 1 R	A	Menu RootMenu	Nop
+Mouse 2 R	A	Menu Window-Ops	Nop
+Mouse 3 R	A	WindowList
+
+Mouse 1 FS	A	Resize-or-Raise
+Mouse 1 T	A	Move-or-Raise
+Mouse 1 W	M	Move-or-Raise
+Mouse 1 I	A	Iconify
+
+Mouse 1 1	N	Menu Window-Ops
+Mouse 1 2	N	Close
+Mouse 1 4	N	Iconify
+
+Key Return	A	CM	Exec exec xterm
+Key Return	A	C	Exec exec dmenu_run
+
+# Menus
+AddToMenu RootMenu	"Menu"		Title
++			"restart"	Restart fvwm2
++			"xterm"		Exec exec xterm
++			"firefox-esr"	Exec exec firefox-esr
++			"dmenu"		Exec exec dmenu_run
+
+AddToMenu Window-Ops	"Window Menu"	Title
++			"move"		Move
++			"resize"	Resize
++			"raise"		Raise
++			"close"		Close
++			"destroy"	Destroy
+
+# Functions
+AddToFunc Move-or-Raise		"I" Raise
++				"M" Move
++				"D" Lower
+
+AddToFunc Resize-or-Raise	"I" Raise
++				"M" Resize
++				"D" Lower
