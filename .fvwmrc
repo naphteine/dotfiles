@@ -6,21 +6,75 @@
 DeskTopSize 1x1
 
 # Keyboard and Mouse bindings
-Mouse 1 R	A	Menu RootMenu	Nop
-Mouse 2 R	A	Menu Window-Ops	Nop
-Mouse 3 R	A	WindowList
-
-Mouse 1 FS	A	Resize-or-Raise
-Mouse 1 T	A	Move-or-Raise
-Mouse 1 W	M	Move-or-Raise
-Mouse 1 I	A	Iconify
-
-Mouse 1 1	N	Menu Window-Ops
-Mouse 1 2	N	Close
-Mouse 1 4	N	Iconify
-
 Key Return	A	CM	Exec exec xterm
-Key Return	A	C	Exec exec dmenu_run
+Key Delete	A	CM	Nop
+Key Return	A	M	Nop
+Key Down	A	M	Lower
+Key Up		A	M	Raise
+Key Slash	A	M	Nop
+Key Slash	A	C	Nop
+Key N		A	CM	Nop
+Key Tab		A	M	WindowList Root c c NoDeskSort, SelectOnRelease Meta_L
+Key Tab		A	MS	WindowList
+Key X		A	CM	Close
+Key 1		A	CM	Nop
+Key 2		A	CM	Nop
+Key 3		A	CM	Nop
+Key 4		A	CM	Nop
+key 5		A	CM	Nop
+Key 6		A	CM	Nop
+Key 7		A	CM	Nop
+Key 8		A	CM	Nop
+Key 9		A	CM	Nop
+Key 0		A	CM	Nop
+Key A		A	CM	Nop
+Key G		A	CM	Nop
+Key Right	A	M	Nop
+Key Left	A	M	Nop
+Key F		A	CMS	Nop
+Key S		A	CM	Nop
+Key F		A	CM	Maximize 100 100
+Key M		A	CM	Maximize 100 100
+Key Equal	A	CM	Maximize 0 100
+Key Equal	A	CMS	Maximize 100 0
+Key H		A	M	Move w-1p h
+Key J		A	M	Move w h-1p
+Key K		A	M	Move w h+1p
+Key L		A	M	Move w+1p h
+Key H		A	MS	Move w-10p h
+Key J		A	MS	Move w h-10p
+Key K		A	MS	Move w h+10p
+Key L		A	MS	Move w+10p h
+Key H		A	CM	Resize x-1p y
+Key J		A	CM	Resize x y-1p
+Key K		A	CM	Resize x y+1p
+Key L		A	CM	Resize x+1p y
+Key H		A	CMS	Resize x-10p y
+Key J		A	CMS	Resize x y-10p
+Key K		A	CMS	Resize x y+10p
+Key L		A	CMS	Resize x+10p y
+Key Question	A	M	Nop
+Key Period	A	M	Nop
+Key W		A	CM	Nop
+Key R		A	CMS	Restart fvwm2
+Key Q		A	CMS	Popup Quit-Verify
+
+Mouse 1		W	M	Move-or-Raise
+Mouse 1		W	CM	Nop
+Mouse 2		W	M	Resize
+Mouse 3		W	M	Lower
+Mouse 3		W	CMS	Nop
+
+Mouse 1		R	A	Menu RootMenu	Nop
+Mouse 2		R	A	Menu Window-Ops	Nop
+Mouse 3		R	A	WindowList
+Mouse 1		FS	A	Resize-or-Raise
+Mouse 1		T	A	Move-or-Raise
+Mouse 1		I	A	Iconify
+
+Mouse 1		1	N	Menu Window-Ops
+Mouse 1		2	N	Close
+Mouse 1		4	N	Iconify
 
 # Menus
 AddToMenu RootMenu	"Menu"		Title
@@ -35,6 +89,10 @@ AddToMenu Window-Ops	"Window Menu"	Title
 +			"raise"		Raise
 +			"close"		Close
 +			"destroy"	Destroy
+
+AddToMenu Quit-Verify	"Quit?"		Title
++			"Yes"		Quit
++			"No"		Nop
 
 # Functions
 AddToFunc Move-or-Raise		"I" Raise
