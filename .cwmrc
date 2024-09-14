@@ -1,0 +1,12 @@
+borderwidth 3
+
+command firefox		firefox
+
+sticky yes
+
+bind-key CS-Return	"kgx"
+
+color activeborder	aliceblue
+color inactiveborder	darkgreen
+
+gap 10 10 10 10
